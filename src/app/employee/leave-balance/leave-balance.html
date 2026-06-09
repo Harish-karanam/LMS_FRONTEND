@@ -1,0 +1,29 @@
+<div class="leave-balance-card">
+
+  <h2>Leave Balance</h2>
+
+  <div
+    class="balance-row"
+    *ngFor="let balance of balances">
+
+    <span>
+      {{ getLeaveTypeName(balance.leaveTypeId) }}
+    </span>
+
+    <b>
+      {{ balance.remainingDays }}
+      /
+      {{ balance.totalDays }}
+    </b>
+
+  </div>
+
+  <p
+    class="no-data"
+    *ngIf="balances.length === 0">
+
+    No leave balance found
+
+  </p>
+
+</div>

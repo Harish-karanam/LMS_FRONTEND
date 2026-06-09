@@ -1,0 +1,78 @@
+
+<!-- <h2 style="text-align: center;">Employee Dashboard</h2>
+
+<h2>Welcome {{employeeName}}</h2>
+
+
+
+<mat-card *ngIf="balance">
+
+  <h3>Leave Balance</h3>
+
+  <p>
+    Allocated Days:
+    {{ balance.allocatedDays }}
+  </p>
+
+  <p>
+    Used Days:
+    {{ balance.usedDays }}
+  </p>
+
+  <p>
+    Remaining Days:
+    {{ balance.remainingDays }}
+  </p>
+
+  
+
+  <div style="text-align:right">
+
+<button
+mat-raised-button
+color="warn"
+(click)="logout()">
+
+Logout
+
+</button>
+
+</div>
+
+
+<div class="dashboard-container">
+
+  <app-leave-balance></app-leave-balance>
+
+  <app-apply-leave></app-apply-leave>
+
+  <app-leave-history></app-leave-history>
+
+</div> -->
+
+<div class="dashboard-header">
+  <h2>Welcome, {{employeeName}}</h2>
+
+  <button
+    mat-raised-button
+    color="warn"
+    (click)="logout()">
+    Logout
+  </button>
+</div>
+
+<div class="dashboard-grid">
+
+  <div class="left-panel">
+    <app-leave-balance></app-leave-balance>
+  </div>
+
+  <div class="right-panel" >
+    <app-apply-leave></app-apply-leave>
+  </div>
+
+</div>
+
+<div class="history-section">
+  <app-leave-history></app-leave-history>
+</div>

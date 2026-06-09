@@ -1,0 +1,77 @@
+.approval-container {
+  padding: 30px;
+  background: #f4f7fb;
+  min-height: 100vh;
+}
+
+.approval-container h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 25px;
+}
+
+.tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.tabs button {
+  border: none;
+  padding: 12px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  background: white;
+  color: #0f172a;
+  font-weight: 600;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
+}
+
+.tabs button.active {
+  background: #0284c7;
+  color: white;
+}
+
+.approval-card {
+  background: white;
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.approval-card.approved {
+  border-left: 5px solid #16a34a;
+}
+
+.approval-card.pending {
+  border-left: 5px solid #f59e0b;
+}
+
+.approval-card p {
+  margin: 10px 0;
+  color: #334155;
+  font-size: 15px;
+}
+
+.approval-card b {
+  color: #0f172a;
+}
+
+.waiting-badge {
+  display: inline-block;
+  margin-top: 15px;
+  background: #fef3c7;
+  color: #92400e;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.empty-message {
+  color: #64748b;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}

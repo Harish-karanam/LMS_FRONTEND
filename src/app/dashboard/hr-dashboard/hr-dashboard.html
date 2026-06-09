@@ -1,0 +1,61 @@
+<div class="hr-layout">
+
+  <aside class="sidebar">
+
+    <div class="logo-section">
+      <h2>INVENIO</h2>
+      <p>HR Panel</p>
+    </div>
+
+    <nav>
+      <a routerLink="/hr-dashboard">Dashboard</a>
+
+      <a routerLink="/hr-users">Users</a>
+
+      <a routerLink="/hr-approvals">Approvals</a>
+
+      <a routerLink="/hr-projects">Projects</a>
+
+      <a routerLink="/hr-departments">Departments</a>
+
+      <a routerLink="/hr-leave-types">Leave Types</a>
+
+      <a routerLink="/hr-leave-balances">Leave Balances</a>
+    </nav>
+
+  </aside>
+
+  <main class="main-content">
+
+    <div class="top-bar">
+      <h1>HR Dashboard</h1>
+      Welcome Back, {{ hrName }}
+    </div>
+
+    <div class="dashboard-cards">
+
+      <mat-card routerLink="/hr-users" class="dashboard-card">
+        <h3>Users</h3>
+        <p>Manage employee data</p>
+      </mat-card>
+
+      <mat-card routerLink="/hr-approvals" class="dashboard-card">
+        <h3>Leave Approvals</h3>
+        <p>Review pending requests</p>
+      </mat-card>
+
+      <mat-card routerLink="/hr-projects" class="dashboard-card">
+        <h3>Projects</h3>
+        <p>View project details</p>
+      </mat-card>
+
+      <mat-card routerLink="/hr-leave-balances" class="dashboard-card">
+        <h3>Leave Balances</h3>
+        <p>Track leave availability</p>
+      </mat-card>
+
+    </div>
+
+  </main>
+
+</div>

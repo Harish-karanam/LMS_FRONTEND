@@ -1,0 +1,24 @@
+<div class="projects-container">
+
+  <h2>Assigned Project</h2>
+
+  <div
+    class="project-card"
+    *ngFor="let project of projects">
+
+    <h3>{{ project.projectName }}</h3>
+
+    <p>
+      <b>Department:</b>
+      {{ project.departmentName }}
+    </p>
+
+  </div>
+
+  <p
+    class="empty-message"
+    *ngIf="projects.length === 0">
+    No project assigned
+  </p>
+
+</div>

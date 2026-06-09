@@ -1,4 +1,5 @@
-<mat-card>
+<div class="registration-control">
+  <mat-card>
 
   <mat-card-header>
     <mat-card-title>User Registration</mat-card-title>
@@ -25,7 +26,7 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Last Name</mat-label>
+        <mat-label>Role Name</mat-label>
         <input
           matInput
           [(ngModel)]="registrationData.lastName"
@@ -106,5 +107,12 @@
     </form>
 
   </mat-card-content>
+   <div class="link-text">
+    <p>
+    Already have an account?
+    <a routerLink="/login">Login here</a>
+    </p>
+  </div>
 
 </mat-card>
+</div>

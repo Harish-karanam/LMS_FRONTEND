@@ -1,0 +1,197 @@
+<div class="admin-layout">
+
+  <!-- Sidebar -->
+
+  <aside class="sidebar">
+
+    <div class="logo-section">
+
+      <h2>INVENIO</h2>
+
+      <p>Admin Panel</p>
+
+    </div>
+
+    <nav>
+
+      <a routerLink="/admin-dashboard">
+        <mat-icon>dashboard</mat-icon>
+        Dashboard
+      </a>
+
+      <a routerLink="/admin-users">
+        <mat-icon>groups</mat-icon>
+        Users
+      </a>
+
+      <a routerLink="/admin-projects">
+        <mat-icon>business_center</mat-icon>
+        Projects
+      </a>
+
+      <a routerLink="/admin-departments">
+        <mat-icon>apartment</mat-icon>
+        Departments
+      </a>
+
+      <a routerLink="/admin-roles">
+        <mat-icon>admin_panel_settings</mat-icon>
+        Roles
+      </a>
+
+      <a routerLink="/admin-notifications">
+        <mat-icon>notifications</mat-icon>
+        Notifications
+      </a>
+
+      <a routerLink="/admin-audit-logs">
+        <mat-icon>history</mat-icon>
+        Audit Logs
+      </a>
+
+    </nav>
+
+  </aside>
+
+  <!-- Main Content -->
+
+  <main class="main-content">
+
+    <div class="top-bar">
+
+      <div>
+
+        <h1>Admin Dashboard</h1>
+
+        <p>
+          Manage the entire Leave Management System
+        </p>
+
+      </div>
+
+      <div class="admin-profile">
+
+        <mat-icon>account_circle</mat-icon>
+
+        <span>
+          {{ adminName }}
+        </span>
+
+      </div>
+
+    </div>
+
+    <!-- Banner -->
+
+    <div class="welcome-banner">
+
+      <div>
+
+        <h2>Enterprise Leave Management System</h2>
+
+        <p>
+          Manage users, approvals, departments,
+          projects, roles and audit activities.
+        </p>
+
+      </div>
+
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+        width="120">
+
+    </div>
+
+    <!-- Dashboard Cards -->
+
+    <div class="dashboard-cards">
+
+      <mat-card
+        routerLink="/admin-users"
+        class="dashboard-card">
+
+        <mat-icon>groups</mat-icon>
+
+        <h3>Users</h3>
+
+        <p>
+          Manage employees and managers
+        </p>
+
+      </mat-card>
+
+      <mat-card
+        routerLink="/admin-projects"
+        class="dashboard-card">
+
+        <mat-icon>business_center</mat-icon>
+
+        <h3>Projects</h3>
+
+        <p>
+          Track and manage projects
+        </p>
+
+      </mat-card>
+
+      <mat-card
+        routerLink="/admin-departments"
+        class="dashboard-card">
+
+        <mat-icon>apartment</mat-icon>
+
+        <h3>Departments</h3>
+
+        <p>
+          Organize departments
+        </p>
+
+      </mat-card>
+
+      <mat-card
+        routerLink="/admin-roles"
+        class="dashboard-card">
+
+        <mat-icon>security</mat-icon>
+
+        <h3>Roles</h3>
+
+        <p>
+          Configure system roles
+        </p>
+
+      </mat-card>
+
+      <mat-card
+        routerLink="/admin-notifications"
+        class="dashboard-card">
+
+        <mat-icon>notifications</mat-icon>
+
+        <h3>Notifications</h3>
+
+        <p>
+          Monitor notifications
+        </p>
+
+      </mat-card>
+
+      <mat-card
+        routerLink="/admin-audit-logs"
+        class="dashboard-card">
+
+        <mat-icon>history</mat-icon>
+
+        <h3>Audit Logs</h3>
+
+        <p>
+          Track system activities
+        </p>
+
+      </mat-card>
+
+    </div>
+
+  </main>
+
+</div>

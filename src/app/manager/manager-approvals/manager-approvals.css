@@ -1,0 +1,36 @@
+.approval-container {
+  padding: 30px;
+  background: #f4f7fb;
+  min-height: 100vh;
+}
+
+.approval-container h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #0f172a;
+}
+
+.approval-card {
+  background: white;
+  border-left: 5px solid #0284c7;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.approval-card p {
+  margin: 8px 0;
+  color: #334155;
+}
+
+.approval-card b {
+  color: #0f172a;
+}
+
+.empty-message {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  color: #64748b;
+}

@@ -1,0 +1,37 @@
+.team-container {
+  padding: 30px;
+  background: #f4f7fb;
+  min-height: 100vh;
+}
+
+.team-container h2 {
+  font-size: 28px;
+  color: #0f172a;
+  margin-bottom: 25px;
+}
+
+.team-card {
+  background: white;
+  border-left: 5px solid #0284c7;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.team-card h3 {
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.team-card p {
+  color: #334155;
+  margin: 8px 0;
+}
+
+.empty-message {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  color: #64748b;
+}

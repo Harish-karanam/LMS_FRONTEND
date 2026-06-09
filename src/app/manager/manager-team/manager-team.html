@@ -1,0 +1,33 @@
+<div class="team-container">
+
+  <h2>My Team Members</h2>
+
+  <div
+    class="team-card"
+    *ngFor="let user of teamMembers">
+
+    <h3>
+      {{ user.firstName }} {{ user.lastName }}
+    </h3>
+
+    <p><b>Employee Code:</b> {{ user.employeeCode }}</p>
+
+    <p><b>Email:</b> {{ user.email }}</p>
+
+    <p><b>Role:</b> {{ user.roleName }}</p>
+
+    <p><b>Department:</b> {{ user.departmentName }}</p>
+
+    <p><b>Project:</b> {{ user.projectName }}</p>
+
+    <p><b>Status:</b> {{ user.status }}</p>
+
+  </div>
+
+  <p
+    class="empty-message"
+    *ngIf="teamMembers.length === 0">
+    No team members assigned.
+  </p>
+
+</div>

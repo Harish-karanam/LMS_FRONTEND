@@ -1,0 +1,84 @@
+<div class="manager-layout">
+
+  <aside class="sidebar">
+
+    <div class="logo-section">
+      <h2>INVENIO</h2>
+      <p>Manager Panel</p>
+    </div>
+
+    <nav>
+
+      <a routerLink="/manager-home">
+        Dashboard
+      </a>
+
+      <a routerLink="/manager-approvals">
+        Leave Approvals
+      </a>
+
+      <a routerLink="/manager-team">
+        Team Members
+      </a>
+      <a routerLink="/manager-projects">
+  Projects
+</a>
+
+    </nav>
+
+  </aside>
+
+  <main class="main-content">
+
+    <div class="top-bar">
+
+      <h1>Manager Dashboard</h1>
+
+      <span>
+        Welcome Manager
+      </span>
+
+    </div>
+
+    <div class="dashboard-cards">
+
+      <mat-card
+        routerLink="/manager-approvals"
+        class="dashboard-card">
+
+        <h3>Leave Approvals</h3>
+
+        <p>
+          Review employee leave requests
+        </p>
+
+      </mat-card>
+
+      <mat-card
+        routerLink="/manager-team"
+        class="dashboard-card">
+
+        <h3>Team Members</h3>
+
+        <p>
+          View reporting employees
+        </p>
+
+      </mat-card>
+      <mat-card
+  routerLink="/manager-projects"
+  class="dashboard-card">
+
+  <h3>Projects</h3>
+
+  <p>
+    View assigned project details
+  </p>
+
+</mat-card>
+
+    </div>
+
+  </main>
+
+</div>

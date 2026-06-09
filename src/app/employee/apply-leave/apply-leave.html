@@ -1,0 +1,72 @@
+<mat-card class="fulll">
+
+  <mat-card-title>
+    Apply Leave 
+  </mat-card-title>
+
+  <input
+  matInput
+  type="date"
+  [(ngModel)]="leaveRequest.startDate"
+  name="startDate">
+
+  <input
+  matInput
+  type="date"
+  [(ngModel)]="leaveRequest.endDate"
+  name="endDate">
+
+  
+  <mat-form-field>
+     <mat-label>Type of Leave</mat-label>
+    <mat-select
+  [(ngModel)]="leaveRequest.leaveTypeId"
+  name="leaveTypeId">
+
+
+      <mat-option value="1">
+        Sick Leave
+      </mat-option>
+
+      <mat-option value="2">
+        Casual Leave
+      </mat-option>
+
+      
+
+      <mat-option value="3">
+        Earned Leave
+      </mat-option>
+
+      <mat-option value="4">
+        Maternity Leave
+      </mat-option>
+
+      <mat-option value="5">
+        LOP Leave
+      </mat-option>
+
+
+     
+
+    </mat-select>
+  </mat-form-field>
+
+ <mat-form-field appearance="outline">
+  <mat-label>Reason</mat-label>
+  <textarea
+    matInput
+    [(ngModel)]="leaveRequest.reason">
+  </textarea>
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="applyLeave()">
+
+    Apply
+
+  </button>
+
+</mat-card>

@@ -1,0 +1,111 @@
+<div class="leave-history-card">
+
+  <h2>Leave History</h2>
+
+  <table>
+
+    <thead>
+
+      <tr>
+
+        <th>Leave Type</th>
+
+        <th>Start Date</th>
+
+        <th>End Date</th>
+
+        <th>Manager Approval</th>
+
+        <th>HR Approval</th>
+
+        <th>Final Status</th>
+
+      </tr>
+
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let leave of leaves">
+
+        <td>
+          {{ leave.leaveType }}
+        </td>
+
+        <td>
+          {{ leave.startDate }}
+        </td>
+
+        <td>
+          {{ leave.endDate }}
+        </td>
+
+        <td>
+
+          <span
+            class="status manager"
+            [class.pending]="leave.status === 'PENDING'"
+            [class.approved]="
+              leave.status === 'MANAGER_APPROVED' ||
+              leave.status === 'HR_APPROVED'
+            ">
+
+            {{
+              leave.status === 'PENDING'
+                ? 'Manager Pending'
+                : 'Manager Approved'
+            }}
+
+          </span>
+
+        </td>
+
+        <td>
+
+          <span
+            class="status hr"
+            [class.pending]="
+              leave.status === 'PENDING' ||
+              leave.status === 'MANAGER_APPROVED'
+            "
+            [class.approved]="
+              leave.status === 'HR_APPROVED'
+            ">
+
+            {{
+              leave.status === 'HR_APPROVED'
+                ? 'HR Approved'
+                : 'HR Pending'
+            }}
+
+          </span>
+
+        </td>
+
+        <td>
+
+          <span
+            class="status final"
+            [class.pending]="leave.status === 'PENDING'"
+            [class.manager-approved]="leave.status === 'MANAGER_APPROVED'"
+            [class.approved]="leave.status === 'HR_APPROVED'">
+
+            {{
+              leave.status === 'HR_APPROVED'
+                ? 'APPROVED'
+                : leave.status === 'MANAGER_APPROVED'
+                ? 'MANAGER APPROVED'
+                : leave.status
+            }}
+
+          </span>
+
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>

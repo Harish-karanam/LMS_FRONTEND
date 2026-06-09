@@ -1,0 +1,54 @@
+.leave-balance-card {
+  width: 320px;
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.leave-balance-card h2 {
+  text-align: center;
+  margin-bottom: 22px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.balance-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #f1f5f9;
+
+  border-left: 4px solid #0ea5e9;
+
+  padding: 12px 14px;
+
+  border-radius: 10px;
+
+  margin-bottom: 14px;
+}
+
+.balance-row span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.balance-row b {
+  background: #0284c7;
+  color: white;
+
+  padding: 5px 12px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+}
+
+.no-data {
+  text-align: center;
+  color: #64748b;
+  margin-top: 12px;
+}

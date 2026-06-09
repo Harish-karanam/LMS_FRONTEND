@@ -1,0 +1,31 @@
+.page-container {
+  padding: 30px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+mat-card {
+  padding: 25px;
+  border-radius: 16px;
+}
+
+mat-card-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  background: #0f172a;
+  color: black;
+  font-weight: 600;
+}
+
+td {
+  color: #334155;
+}

@@ -1,0 +1,54 @@
+<div class="approval-container">
+
+  <h2>Manager Leave Approvals</h2>
+
+  <div
+    class="approval-card"
+    *ngFor="let leave of leaveRequests">
+
+    <p>
+      <b>Employee:</b>
+      {{ leave.employeeName }}
+    </p>
+
+    <p>
+      <b>Leave Type:</b>
+      {{ leave.leaveType }}
+    </p>
+
+    <p>
+      <b>From:</b>
+      {{ leave.startDate }}
+    </p>
+
+    <p>
+      <b>To:</b>
+      {{ leave.endDate }}
+    </p>
+
+    <p>
+      <b>Status:</b>
+      {{ leave.status }}
+    </p>
+
+    <button
+      mat-raised-button
+      color="primary"
+      *ngIf="leave.status === 'PENDING'"
+      (click)="approveLeave(leave.id)">
+
+      Manager Approve
+
+    </button>
+
+  </div>
+
+  <p
+    class="empty-message"
+    *ngIf="leaveRequests.length === 0">
+
+    No leave requests found
+
+  </p>
+
+</div>

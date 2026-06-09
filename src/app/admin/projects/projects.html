@@ -1,0 +1,28 @@
+<div class="admin-page">
+
+  <h2>All Projects</h2>
+
+  <div
+    class="project-card"
+    *ngFor="let project of projects">
+
+    <h3>{{ project.projectName }}</h3>
+
+    <p>
+      <b>Project ID:</b>
+      {{ project.id }}
+    </p>
+
+    <p>
+      <b>Country:</b>
+      {{ project.country }}
+    </p>
+
+    <p>
+      <b>Weekend Days:</b>
+      {{ project.weekendDays }}
+    </p>
+
+  </div>
+
+</div>

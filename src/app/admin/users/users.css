@@ -1,0 +1,45 @@
+.admin-page {
+  padding: 30px;
+  background: #f4f7fb;
+  min-height: 100vh;
+}
+
+.admin-page h2 {
+  font-size: 30px;
+  color: #0f172a;
+  margin-bottom: 25px;
+}
+
+.user-card {
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 24px;
+
+  margin-bottom: 20px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+  border-left: 5px solid #2563eb;
+
+  transition: 0.3s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-4px);
+}
+
+.user-card h3 {
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.user-card p {
+  margin: 8px 0;
+  color: #475569;
+}
+
+.user-card b {
+  color: #0f172a;
+}
