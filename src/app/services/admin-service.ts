@@ -64,14 +64,12 @@ export class AdminService {
   }
 
   // NOTIFICATIONS
-
-  getAllNotifications() {
-
-    return this.http.get<any[]>(
-      `${this.baseUrl}/notifications`,
-      this.getHeaders()
-    );
-  }
+getAllNotifications() {
+  return this.http.get<any[]>(
+    `${this.baseUrl}/notifications`,
+    this.getHeaders()
+  );
+}
 
   // AUDIT LOGS
 

@@ -1,0 +1,35 @@
+.admin-page {
+  padding: 30px;
+  background: #f4f7fb;
+  min-height: 100vh;
+}
+
+.admin-page h2 {
+  font-size: 30px;
+  color: #0f172a;
+  margin-bottom: 25px;
+}
+
+.notification-card {
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 24px;
+
+  margin-bottom: 20px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+  border-left: 5px solid #2563eb;
+}
+
+.notification-card h3 {
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.notification-card p {
+  margin: 8px 0;
+  color: #475569;
+}

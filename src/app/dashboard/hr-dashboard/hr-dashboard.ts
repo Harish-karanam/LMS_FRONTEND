@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hr-dashboard',
@@ -10,8 +11,16 @@ export class HrDashboard {
 
   hrName: string = '';
 
-  constructor() {
-    this.hrName = localStorage.getItem('name') || 'HR';
-    
+  constructor(private router: Router) {
+
+    this.hrName =
+      localStorage.getItem('name') || 'HR';
+  }
+
+  logout() {
+
+    localStorage.clear();
+
+    this.router.navigate(['/login']);
   }
 }

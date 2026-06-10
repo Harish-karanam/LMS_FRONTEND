@@ -1,1 +1,18 @@
-<p>departments works!</p>
+<div class="admin-page">
+
+  <h2>All Departments</h2>
+
+  <div
+    class="department-card"
+    *ngFor="let department of departments">
+
+    <h3>{{ department.departmentName }}</h3>
+
+    <p>
+      <b>Department ID:</b>
+      {{ department.id }}
+    </p>
+
+  </div>
+
+</div>

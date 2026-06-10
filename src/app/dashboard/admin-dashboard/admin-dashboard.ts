@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -10,7 +11,15 @@ export class AdminDashboard {
 
   adminName: string = '';
 
-  constructor() {
-    this.adminName = localStorage.getItem('name') || 'Admin';
-  }
+  
+  constructor(private router: Router) {
+  this.adminName =
+    localStorage.getItem('name') || 'Admin';
+}
+logout() {
+
+  localStorage.clear();
+
+  this.router.navigate(['/login']);
+}
 }

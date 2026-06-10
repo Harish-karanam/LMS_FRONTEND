@@ -1,1 +1,44 @@
-<p>notifications works!</p>
+<div class="admin-page">
+
+  <h2>All Notifications</h2>
+
+  <p
+    class="empty-message"
+    *ngIf="notifications.length === 0">
+    No notifications found.
+  </p>
+
+  <div
+    class="notification-card"
+    *ngFor="let notification of notifications">
+
+    <h3>{{ notification.message }}</h3>
+
+    <p>
+      <b>Notification ID:</b>
+      {{ notification.id }}
+    </p>
+
+    <p>
+      <b>User ID:</b>
+      {{ notification.userId }}
+    </p>
+
+    <p>
+      <b>Status:</b>
+      {{ notification.status }}
+    </p>
+
+    <p>
+      <b>Type:</b>
+      {{ notification.type }}
+    </p>
+
+    <p>
+      <b>Created At:</b>
+      {{ notification.createdAt }}
+    </p>
+
+  </div>
+
+</div>

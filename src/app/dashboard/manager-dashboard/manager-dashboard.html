@@ -35,7 +35,17 @@
       <h1>Manager Dashboard</h1>
 
       <span>
-        Welcome Manager
+        Welcome {{managerName}}
+        <button
+  mat-raised-button
+  color="warn"
+  (click)="logout()">
+
+  <mat-icon>logout</mat-icon>
+
+  Logout
+
+</button>
       </span>
 
     </div>

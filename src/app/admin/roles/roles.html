@@ -1,1 +1,18 @@
-<p>roles works!</p>
+<div class="admin-page">
+
+  <h2>All Roles</h2>
+
+  <div
+    class="role-card"
+    *ngFor="let role of roles">
+
+    <h3>{{ role.roleName }}</h3>
+
+    <p>
+      <b>Role ID:</b>
+      {{ role.id }}
+    </p>
+
+  </div>
+
+</div>

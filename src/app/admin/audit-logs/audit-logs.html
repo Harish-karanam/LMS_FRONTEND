@@ -1,1 +1,19 @@
-<p>audit-logs works!</p>
+<div class="admin-page">
+
+  <h2>Audit Logs</h2>
+
+  <div
+    class="audit-card"
+    *ngFor="let log of auditLogs">
+
+    <h3>{{ log.action }}</h3>
+
+    <p><b>Log ID:</b> {{ log.id }}</p>
+    <p><b>Entity Name:</b> {{ log.entityName }}</p>
+    <p><b>Employee ID:</b> {{ log.entityId }}</p>
+    <p><b>Performed By:</b> {{ log.performedBy }}</p>
+    <p><b>Created At:</b> {{ log.createdAt }}</p>
+
+  </div>
+
+</div>
