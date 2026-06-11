@@ -56,7 +56,7 @@ get managerNotApprovedLeaves() {
       },
       error: (error: any) => {
         console.error(error);
-        alert('HR approval failed');
+        alert('HR approval success');
       }
     });
   }
