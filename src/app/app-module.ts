@@ -45,7 +45,8 @@ import { Projects } from './admin/projects/projects';
 import { Roles } from './admin/roles/roles';
 import { Notifications } from './admin/notifications/notifications';
 import { AuditLogs } from './admin/audit-logs/audit-logs';
-import { MatIcon } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+import { NotificationBell } from './shared/notification-bell/notification-bell';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { MatIcon } from '@angular/material/icon';
     Roles,
     Notifications,
     AuditLogs,
+    NotificationBell,
   ],
 
   imports: [
@@ -90,7 +92,7 @@ import { MatIcon } from '@angular/material/icon';
     MatCardModule,
     MatSelectModule,
     MatTableModule,
-    MatIcon
+  MatIconModule,
   ],
 
   providers: [

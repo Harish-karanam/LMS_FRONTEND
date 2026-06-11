@@ -1,0 +1,41 @@
+<div class="notification-wrapper">
+
+  <button
+    mat-icon-button
+    class="bell-button"
+    (click)="toggleNotifications()">
+
+    <mat-icon>notifications</mat-icon>
+
+    <span
+      class="count"
+      *ngIf="notifications.length > 0">
+      {{ notifications.length }}
+    </span>
+
+  </button>
+
+  <div
+    class="notification-box"
+    *ngIf="showBox">
+
+    <h3>Notifications</h3>
+
+    <p
+      class="empty"
+      *ngIf="notifications.length === 0">
+      No notifications
+    </p>
+
+    <div
+      class="notification-item"
+      *ngFor="let notification of notifications"
+      (click)="openNotification(notification)">
+
+      {{ notification.message }}
+
+    </div>
+
+  </div>
+
+</div>

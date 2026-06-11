@@ -64,4 +64,19 @@ managerApproveLeave(id: number) {
     this.getHeaders()
   );
 }
+managerRejectLeave(id: number) {
+  return this.http.put(
+    `${this.leaveUrl}/${id}/manager-reject`,
+    {},
+    this.getHeaders()
+  );
+}
+
+hrRejectLeave(id: number) {
+  return this.http.put(
+    `${this.leaveUrl}/${id}/hr-reject`,
+    {},
+    this.getHeaders()
+  );
+}
 }

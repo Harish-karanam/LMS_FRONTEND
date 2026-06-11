@@ -36,17 +36,17 @@ export class HrApprovals implements OnInit {
     });
   }
 
-  get managerApprovedLeaves() {
-    return this.leaveRequests.filter(
-      leave => leave.status === 'MANAGER_APPROVED'
-    );
-  }
+get managerApprovedLeaves() {
+  return this.leaveRequests
+    .filter(leave => leave.status === 'MANAGER_APPROVED')
+    .sort((a, b) => b.id - a.id);
+}
 
-  get managerNotApprovedLeaves() {
-    return this.leaveRequests.filter(
-      leave => leave.status === 'PENDING'
-    );
-  }
+get managerNotApprovedLeaves() {
+  return this.leaveRequests
+    .filter(leave => leave.status === 'PENDING')
+    .sort((a, b) => b.id - a.id);
+}
 
   approveLeave(id: number) {
     this.leaveService.hrApproveLeave(id).subscribe({
@@ -60,4 +60,18 @@ export class HrApprovals implements OnInit {
       }
     });
   }
+
+  rejectLeave(id: number) {
+  this.leaveService.hrRejectLeave(id).subscribe({
+    next: () => {
+      alert('HR Rejected');
+      this.loadLeaveRequests();
+    },
+
+    error: (error: any) => {
+      console.error(error);
+      alert('HR Rejection failed');
+    }
+  });
+}
 }

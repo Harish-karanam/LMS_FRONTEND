@@ -48,18 +48,16 @@ export class ManagerApprovals implements OnInit {
             next: (leaves: any[]) => {
 
               console.log('All Leaves:', leaves);
-
-              this.leaveRequests = leaves.filter(
-                leave =>
-                  teamMembers.some(user =>
-                    leave.employeeName === user.firstName ||
-                    leave.employeeName ===
-                      `${user.firstName} ${user.lastName}` ||
-                    leave.employeeName === user.email ||
-                    leave.employeeName?.toLowerCase() ===
-                      user.firstName?.toLowerCase()
-                  )
-              );
+this.leaveRequests = leaves
+  .filter(leave =>
+    teamMembers.some(user =>
+      leave.employeeName === user.firstName ||
+      leave.employeeName === `${user.firstName} ${user.lastName}` ||
+      leave.employeeName === user.email ||
+      leave.employeeName?.toLowerCase() === user.firstName?.toLowerCase()
+    )
+  )
+  .sort((a, b) => b.id - a.id);
 
               console.log(
                 'Manager Leave Requests:',
@@ -103,4 +101,26 @@ export class ManagerApprovals implements OnInit {
         }
       });
   }
+
+  rejectLeave(id: number) {
+
+  this.leaveService
+    .managerRejectLeave(id)
+    .subscribe({
+
+      next: () => {
+
+        alert('Manager Rejected');
+
+        this.loadManagerLeaves();
+      },
+
+      error: (error: any) => {
+
+        console.error(error);
+
+        alert('Rejection failed');
+      }
+    });
+}
 }

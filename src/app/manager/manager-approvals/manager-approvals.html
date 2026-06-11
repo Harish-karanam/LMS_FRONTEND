@@ -31,15 +31,29 @@
       {{ leave.status }}
     </p>
 
-    <button
-      mat-raised-button
-      color="primary"
-      *ngIf="leave.status === 'PENDING'"
-      (click)="approveLeave(leave.id)">
+    <div class="button-group">
 
-      Manager Approve
+      <button
+        mat-raised-button
+        color="primary"
+        *ngIf="leave.status === 'PENDING'"
+        (click)="approveLeave(leave.id)">
 
-    </button>
+        Manager Approve
+
+      </button>
+
+      <button
+        mat-raised-button
+        color="warn"
+        *ngIf="leave.status === 'PENDING'"
+        (click)="rejectLeave(leave.id)">
+
+        Manager Reject
+
+      </button>
+
+    </div>
 
   </div>
 

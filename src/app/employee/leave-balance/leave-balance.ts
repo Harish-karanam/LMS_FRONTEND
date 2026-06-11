@@ -36,11 +36,11 @@ export class LeaveBalance implements OnInit {
   getLeaveTypeName(id: number): string {
 
     if (id === 1) {
-      return 'Casual Leave';
+      return 'Sick Leave';
     }
 
     if (id === 2) {
-      return 'Sick Leave';
+      return 'Casual Leave';
     }
 
     if (id === 3) {

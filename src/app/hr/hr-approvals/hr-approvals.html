@@ -7,66 +7,133 @@
     <button
       [class.active]="selectedTab === 'managerApproved'"
       (click)="selectedTab = 'managerApproved'">
+
       Manager Approved
+
     </button>
 
     <button
       [class.active]="selectedTab === 'managerNotApproved'"
       (click)="selectedTab = 'managerNotApproved'">
+
       Manager Not Approved
+
     </button>
 
   </div>
+
+  <!-- MANAGER APPROVED -->
 
   <div *ngIf="selectedTab === 'managerApproved'">
 
     <p
       class="empty-message"
       *ngIf="managerApprovedLeaves.length === 0">
+
       No manager approved leave requests found.
+
     </p>
 
     <div
       class="approval-card approved"
       *ngFor="let leave of managerApprovedLeaves">
 
-      <p><b>Employee:</b> {{ leave.employeeName }}</p>
-      <p><b>Leave Type:</b> {{ leave.leaveType }}</p>
-      <p><b>Start Date:</b> {{ leave.startDate }}</p>
-      <p><b>End Date:</b> {{ leave.endDate }}</p>
-      <p><b>Status:</b> {{ leave.status }}</p>
+      <p>
+        <b>Employee:</b>
+        {{ leave.employeeName }}
+      </p>
 
-      <button
-        mat-raised-button
-        color="primary"
-        (click)="approveLeave(leave.id)">
-        HR Approve
-      </button>
+      <p>
+        <b>Leave Type:</b>
+        {{ leave.leaveType }}
+      </p>
+
+      <p>
+        <b>Start Date:</b>
+        {{ leave.startDate }}
+      </p>
+
+      <p>
+        <b>End Date:</b>
+        {{ leave.endDate }}
+      </p>
+
+      <p>
+        <b>Status:</b>
+        {{ leave.status }}
+      </p>
+
+      <div class="button-group">
+
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="approveLeave(leave.id)">
+
+          HR Approve
+
+        </button>
+
+        <button
+          mat-raised-button
+          color="warn"
+          (click)="rejectLeave(leave.id)">
+
+          HR Reject
+
+        </button>
+
+      </div>
 
     </div>
 
   </div>
+
+  <!-- MANAGER NOT APPROVED -->
 
   <div *ngIf="selectedTab === 'managerNotApproved'">
 
     <p
       class="empty-message"
       *ngIf="managerNotApprovedLeaves.length === 0">
+
       No pending manager approval requests found.
+
     </p>
 
     <div
       class="approval-card pending"
       *ngFor="let leave of managerNotApprovedLeaves">
 
-      <p><b>Employee:</b> {{ leave.employeeName }}</p>
-      <p><b>Leave Type:</b> {{ leave.leaveType }}</p>
-      <p><b>Start Date:</b> {{ leave.startDate }}</p>
-      <p><b>End Date:</b> {{ leave.endDate }}</p>
-      <p><b>Status:</b> {{ leave.status }}</p>
+      <p>
+        <b>Employee:</b>
+        {{ leave.employeeName }}
+      </p>
+
+      <p>
+        <b>Leave Type:</b>
+        {{ leave.leaveType }}
+      </p>
+
+      <p>
+        <b>Start Date:</b>
+        {{ leave.startDate }}
+      </p>
+
+      <p>
+        <b>End Date:</b>
+        {{ leave.endDate }}
+      </p>
+
+      <p>
+        <b>Status:</b>
+        {{ leave.status }}
+      </p>
 
       <span class="waiting-badge">
+
         Waiting for Manager Approval
+
       </span>
 
     </div>

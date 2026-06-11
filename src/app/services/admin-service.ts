@@ -80,4 +80,22 @@ getAllNotifications() {
       this.getHeaders()
     );
   }
+  getMyNotifications() {
+
+  const userId = localStorage.getItem('userId');
+
+  return this.http.get<any[]>(
+    `${this.baseUrl}/notifications/user/${userId}`,
+    this.getHeaders()
+  );
+}
+
+markNotificationAsRead(id: number) {
+
+  return this.http.put(
+    `${this.baseUrl}/notifications/${id}/read`,
+    {},
+    this.getHeaders()
+  );
+}
 }

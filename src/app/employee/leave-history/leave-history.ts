@@ -1,33 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { LeaveService } from '../../services/leave-service';
 
 @Component({
   selector: 'app-leave-history',
   standalone: false,
   templateUrl: './leave-history.html',
-  styleUrl: './leave-history.css',
+  styleUrl: './leave-history.css'
 })
 export class LeaveHistory implements OnInit {
 
-  constructor(private leaveService: LeaveService) {}
-
   leaves: any[] = [];
 
-  ngOnInit() {
+  constructor(
+    private leaveService: LeaveService,
+    private cdr: ChangeDetectorRef
+  ) {}
+
+  ngOnInit(): void {
 
     const userId = Number(localStorage.getItem('userId'));
 
     if (userId) {
-      this.leaveService.getMyLeaves(userId)
-        .subscribe({
-          next: (response: any) => {
-            this.leaves = response;
-            console.log('Leave History:', response);
-          },
-          error: (error: any) => {
-            console.error(error);
-          }
-        });
+
+      this.leaveService.getMyLeaves(userId).subscribe({
+
+        next: (response: any) => {
+
+          this.leaves = response;
+
+          console.log('Leave History:', this.leaves);
+
+          this.cdr.detectChanges();
+        },
+
+        error: (error: any) => {
+
+          console.error(error);
+        }
+      });
     }
   }
 }

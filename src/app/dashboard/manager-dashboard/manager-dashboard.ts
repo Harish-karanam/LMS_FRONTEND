@@ -15,6 +15,7 @@ export class ManagerDashboard {
 
     this.managerName =
       localStorage.getItem('name') || 'Manager';
+      
   }
 
   logout() {

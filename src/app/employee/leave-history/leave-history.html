@@ -28,74 +28,125 @@
 
       <tr *ngFor="let leave of leaves">
 
-        <td>
-          {{ leave.leaveType }}
-        </td>
+        <td>{{ leave.leaveType }}</td>
 
-        <td>
-          {{ leave.startDate }}
-        </td>
+        <td>{{ leave.startDate }}</td>
 
-        <td>
-          {{ leave.endDate }}
-        </td>
+        <td>{{ leave.endDate }}</td>
+
+        <!-- MANAGER STATUS -->
 
         <td>
 
           <span
-            class="status manager"
+            class="status"
+
             [class.pending]="leave.status === 'PENDING'"
+
             [class.approved]="
               leave.status === 'MANAGER_APPROVED' ||
-              leave.status === 'HR_APPROVED'
+              leave.status === 'HR_APPROVED' ||
+              leave.status === 'APPROVED'
+            "
+
+            [class.rejected]="
+              leave.status === 'MANAGER_REJECTED'
             ">
 
             {{
+
               leave.status === 'PENDING'
-                ? 'Manager Pending'
-                : 'Manager Approved'
+              ? 'Manager Pending'
+
+              : leave.status === 'MANAGER_REJECTED'
+              ? 'Manager Rejected'
+
+              : 'Manager Approved'
+
             }}
 
           </span>
 
         </td>
 
+        <!-- HR STATUS -->
+
         <td>
 
           <span
-            class="status hr"
+            class="status"
+
             [class.pending]="
               leave.status === 'PENDING' ||
               leave.status === 'MANAGER_APPROVED'
             "
+
             [class.approved]="
-              leave.status === 'HR_APPROVED'
+              leave.status === 'HR_APPROVED' ||
+              leave.status === 'APPROVED'
+            "
+
+            [class.rejected]="
+              leave.status === 'HR_REJECTED' ||
+              leave.status === 'MANAGER_REJECTED'
             ">
 
             {{
-              leave.status === 'HR_APPROVED'
-                ? 'HR Approved'
-                : 'HR Pending'
+
+              leave.status === 'HR_APPROVED' ||
+              leave.status === 'APPROVED'
+              ? 'HR Approved'
+
+              : leave.status === 'HR_REJECTED'
+              ? 'HR Rejected'
+
+              : leave.status === 'MANAGER_REJECTED'
+              ? 'Not Sent To HR'
+
+              : 'HR Pending'
+
             }}
 
           </span>
 
         </td>
 
+        <!-- FINAL STATUS -->
+
         <td>
 
           <span
-            class="status final"
+            class="status"
+
             [class.pending]="leave.status === 'PENDING'"
-            [class.manager-approved]="leave.status === 'MANAGER_APPROVED'"
-            [class.approved]="leave.status === 'HR_APPROVED'">
+
+            [class.approved]="
+              leave.status === 'APPROVED' ||
+              leave.status === 'HR_APPROVED'
+            "
+
+            [class.rejected]="
+              leave.status === 'MANAGER_REJECTED' ||
+              leave.status === 'HR_REJECTED'
+            ">
 
             {{
+
+              leave.status === 'APPROVED' ||
               leave.status === 'HR_APPROVED'
-                ? 'APPROVED'
-                : leave.status === 'MANAGER_APPROVED'
-                ? 'MANAGER APPROVED'
-                : leave.status
+              ? 'Approved'
+
+              : leave.status === 'MANAGER_REJECTED'
+              ? 'Manager Rejected'
+
+              : leave.status === 'HR_REJECTED'
+              ? 'HR Rejected'
+
+              : leave.status === 'MANAGER_APPROVED'
+              ? 'Waiting For HR'
+
+              : 'Pending'
+
             }}
 
           </span>
