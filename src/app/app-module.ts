@@ -1,6 +1,6 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing-module';
@@ -19,7 +19,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { HrHome } from './hr/hr-home/hr-home';
+
 import { HrApprovals } from './hr/hr-approvals/hr-approvals';
 import { HrUsers } from './hr/hr-users/hr-users';
 import { HrProjects } from './hr/hr-projects/hr-projects';
@@ -48,6 +48,7 @@ import { AuditLogs } from './admin/audit-logs/audit-logs';
 import { MatIconModule } from '@angular/material/icon';
 import { NotificationBell } from './shared/notification-bell/notification-bell';
 
+
 @NgModule({
   declarations: [
     App,
@@ -58,7 +59,6 @@ import { NotificationBell } from './shared/notification-bell/notification-bell';
     HrDashboard,
     ManagerDashboard,
     EmployeeDashboard,
-    HrHome,
     HrApprovals,
     HrUsers,
     HrProjects,
@@ -79,6 +79,7 @@ import { NotificationBell } from './shared/notification-bell/notification-bell';
     Notifications,
     AuditLogs,
     NotificationBell,
+    
   ],
 
   imports: [
@@ -93,6 +94,8 @@ import { NotificationBell } from './shared/notification-bell/notification-bell';
     MatSelectModule,
     MatTableModule,
   MatIconModule,
+      ReactiveFormsModule
+  
   ],
 
   providers: [

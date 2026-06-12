@@ -9,7 +9,7 @@ import { HrDashboard } from './dashboard/hr-dashboard/hr-dashboard';
 import { ManagerDashboard } from './dashboard/manager-dashboard/manager-dashboard';
 import { EmployeeDashboard } from './dashboard/employee-dashboard/employee-dashboard';
 
-import { HrHome } from './hr/hr-home/hr-home';
+
 import { HrApprovals } from './hr/hr-approvals/hr-approvals';
 import { HrUsers } from './hr/hr-users/hr-users';
 import { HrProjects } from './hr/hr-projects/hr-projects';
@@ -29,6 +29,7 @@ import { Projects } from './admin/projects/projects';
 import { Roles } from './admin/roles/roles';
 import { Notifications } from './admin/notifications/notifications';
 import { AuditLogs } from './admin/audit-logs/audit-logs';
+import { AuthGuard } from './guards/auth-guard';
 
 const routes: Routes = [
 
@@ -45,49 +46,113 @@ const routes: Routes = [
 
   {
     path: 'register',
-    component: Registeration
+    component: Registeration,
+    canActivate: [AuthGuard],
+    data: { roles: ['ROLE_ADMIN', 'ADMIN'] }
   },
 
   {
     path: 'admin-dashboard',
-    component: AdminDashboard
+    component: AdminDashboard,
+    canActivate: [AuthGuard],
+    data: { roles: ['ROLE_ADMIN', 'ADMIN']}
+    
   },
 
   {
     path: 'hr-dashboard',
-    component: HrDashboard
+    component: HrDashboard,
+    canActivate: [AuthGuard],
+     data: { roles: ['ROLE_HR', 'HR'] }
   },
 
   {
     path: 'manager-dashboard',
-    component: ManagerDashboard
+    component: ManagerDashboard,
+    canActivate: [AuthGuard],
+     data: { roles: ['ROLE_MANAGER', 'MANAGER'] }
   },
 
   {
     path: 'employee-dashboard',
-    component: EmployeeDashboard
+    component: EmployeeDashboard,
+    canActivate: [AuthGuard],
+      data: { roles: ['ROLE_EMPLOYEE', 'EMPLOYEE'] }
   },
-{ path: 'hr-home', component: HrHome },
-{ path: 'hr-approvals', component: HrApprovals },
-{ path: 'hr-users', component: HrUsers },
-{ path: 'hr-projects', component: HrProjects },
-{ path: 'hr-departments', component: HrDepartments },
-{ path: 'hr-leave-types', component: HrLeaveTypes },
-{ path: 'hr-leave-balances', component: HrLeaveBalances },
+
+{ path: 'hr-approvals', component: HrApprovals,
+  canActivate: [AuthGuard],
+   data: { roles: ['ROLE_HR', 'HR'] }
+ },
+{ path: 'hr-users', component: HrUsers,
+  canActivate: [AuthGuard],
+   data: { roles: ['ROLE_HR', 'HR'] }
+ },
+{ path: 'hr-projects', component: HrProjects,
+  canActivate: [AuthGuard],
+   data: { roles: ['ROLE_HR', 'HR'] }
+ },
+{ path: 'hr-departments', component: HrDepartments,
+  canActivate: [AuthGuard],
+   data: { roles: ['ROLE_HR', 'HR'] }
+ },
+{ path: 'hr-leave-types', component: HrLeaveTypes,
+  canActivate: [AuthGuard],
+   data: { roles: ['ROLE_HR', 'HR'] }
+ },
+{ path: 'hr-leave-balances', component: HrLeaveBalances,
+  canActivate: [AuthGuard],
+   data: { roles: ['ROLE_HR', 'HR'] }
+ },
 
 
-{ path: 'manager-home', component: ManagerHome },
-{ path: 'manager-approvals', component: ManagerApprovals },
-{ path: 'manager-team', component: ManagerTeam },
-{ path: 'manager-projects', component: ManagerProjects },
+
+{ path: 'manager-approvals', component: ManagerApprovals,
+  canActivate: [AuthGuard],
+   data: { roles: ['ROLE_MANAGER', 'MANAGER'] }
+ },
+{ path: 'manager-team', component: ManagerTeam,
+  canActivate: [AuthGuard],
+   data: { roles: ['ROLE_MANAGER', 'MANAGER'] }
+ },
+{ path: 'manager-projects', component: ManagerProjects,
+  canActivate: [AuthGuard],
+   data: { roles: ['ROLE_MANAGER', 'MANAGER'] }
+ },
 
 
-{ path: 'admin-users', component: Users },
-{ path: 'admin-departments', component: Departments },
-{ path: 'admin-projects', component: Projects },
-{ path: 'admin-roles', component: Roles },
-{ path: 'admin-notifications', component: Notifications },
-{ path: 'admin-audit-logs', component: AuditLogs },
+
+{ path: 'admin-users', component: Users,
+  canActivate: [AuthGuard],
+  data: { roles: ['ROLE_ADMIN', 'ADMIN']}
+ },
+{ path: 'admin-departments', component: Departments,
+  canActivate: [AuthGuard],
+  data: { roles: ['ROLE_ADMIN', 'ADMIN']}
+ },
+{ path: 'admin-projects', component: Projects,
+  canActivate: [AuthGuard],
+  data: { roles: ['ROLE_ADMIN', 'ADMIN']}
+ },
+
+{ path: 'admin-roles', component: Roles,
+  canActivate: [AuthGuard],
+  data: { roles: ['ROLE_ADMIN', 'ADMIN']}
+ },
+
+{ path: 'admin-notifications', component: Notifications,
+  canActivate: [AuthGuard],
+  data: { roles: ['ROLE_ADMIN', 'ADMIN']}
+ },
+
+{ path: 'admin-audit-logs', component: AuditLogs,
+  canActivate: [AuthGuard],
+  data: { roles: ['ROLE_ADMIN', 'ADMIN']}
+ },
+{ path: 'admin-new-user', component: Registeration,
+  canActivate: [AuthGuard],
+  data: { roles: ['ROLE_ADMIN', 'ADMIN']}
+ },
 
 
 ];

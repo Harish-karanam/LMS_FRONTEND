@@ -2,6 +2,11 @@ mat-card {
     width: 600px;
     margin: 30px auto;
     padding: 20px;
+    background: rgba(255, 255, 255, 0.6); /* transparent white */
+    backdrop-filter: blur(8px);            /* glass effect */
+    -webkit-backdrop-filter: blur(8px);
+
+    border-radius: 15px;
 }
 
 mat-form-field {
@@ -24,13 +29,13 @@ button {
 }
 
 .registration-control {
-  min-height: 600px;
-  background-image: url('../assests/image.png');
+  min-height: 100vh;
+  background-image: url('../assests/3.jpg');
   background-size:cover;
   background-position: center;
   background-repeat: no-repeat;
-  
-  
+  width: 100%;
+ 
 
   display: flex;
   justify-content: center;
